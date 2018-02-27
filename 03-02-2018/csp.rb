@@ -20,7 +20,7 @@ def hourglass_sum(grid, row, col)
 end
 
 # Calculate the maximum hourglass sum
-max_sum = hourglass_sum grid, 0, 0
+max_sum = -63  # Theoretically lowest possible sum
 (0..3).each do |row|
   (0..3).each do |col|
     current_hourglass_sum = hourglass_sum grid, row, col
