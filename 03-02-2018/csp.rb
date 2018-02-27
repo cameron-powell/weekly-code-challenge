@@ -1,13 +1,5 @@
-# Read in the grid.
-grid = []
-6.times do
-  row = gets.split.map { |val| val.to_i }
-  grid.push row
-end
-
-#  Calculates the sum of an hourglass in the grid
-#  where the index of the top left element of the
-#  hourglass is at [row][col]
+#  Calculates the sum of values in an hourglass in a 2D array (grid)
+# where row, col denote the top left element of the hourglass
 def hourglass_sum(grid, row, col)
   sum = 0
   # Sum top and bottom rows
@@ -15,12 +7,16 @@ def hourglass_sum(grid, row, col)
     sum += grid[row][col+shift]
     sum += grid[row+2][col+shift]
   end
-  # Add in middle
+  # Add the middle value and return
   sum += grid[row+1][col+1]
 end
 
+# Read in the grid.
+grid = []
+6.times { grid.push gets.split.map { |val| val.to_i } }
+
 # Calculate the maximum hourglass sum
-max_sum = -63  # Theoretically lowest possible sum
+max_sum = -63  # Lowest possible sum
 (0..3).each do |row|
   (0..3).each do |col|
     current_hourglass_sum = hourglass_sum grid, row, col
