@@ -1,3 +1,2 @@
-house_left, house_right, apple_tree, orange_tree = gets.split.map(&:to_i) + gets.split.map(&:to_i); gets
-puts gets.split.map { |apple| (apple_tree + apple.to_i >= house_left && apple_tree + apple.to_i <= house_right) ? 1 : 0 }.reduce(:+)
-puts gets.split.map { |orange| (orange_tree + orange.to_i >= house_left && orange_tree + orange.to_i <= house_right) ? 1 : 0 }.reduce(:+)
+s, t, a, b = (gets + " " + gets).split.map(&:to_i); gets
+puts gets.split.map {|ap| (a+ap.to_i >= s && a+ap.to_i <= t) ? 1 : 0 }.reduce(:+), gets.split.map {|oe| (b+oe.to_i >= s && b+oe.to_i <= t) ? 1 : 0 }.reduce(:+)
