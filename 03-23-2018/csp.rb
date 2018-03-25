@@ -1,9 +1,9 @@
 gets; scores = gets.split.map(&:to_i)
-max = min = "#{scores[0]} #{0}"
+max, min = [scores[0], 0], [scores[0], 0]
 
 (1...scores.length).each do |index|
-  max = (scores[index] > max.split.map(&:to_i)[0]) ? "#{scores[index]} #{max.split.map(&:to_i)[1]+1}" : max
-  min = (scores[index] < min.split.map(&:to_i)[0]) ? "#{scores[index]} #{min.split.map(&:to_i)[1]+1}" : min
+  max = (scores[index] > max[0]) ? [scores[index], max[1]+1] : max
+  min = (scores[index] < min[0]) ? [scores[index], min[1]+1] : min
 end
 
-puts "#{max.split[1]} #{min.split[1]}"
+puts "#{max[1]} #{min[1]}"
