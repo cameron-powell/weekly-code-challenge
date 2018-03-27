@@ -17,8 +17,9 @@ static Integer divisibleSumPairs(List<Integer> list, Integer divisor, Integer li
     count
 }
 
-List<String> params = System.console().readLine().split(" ")
-List<Integer> list = System.console().readLine().split(" ").collect { it as Integer }
+BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in))
+List<String> params = stdin.readLine().split(" ")
+List<Integer> list = stdin.readLine().split(" ").collect { it as Integer }
 
 Integer listSize = params[0] as Integer
 Integer divisor = params[1] as Integer
